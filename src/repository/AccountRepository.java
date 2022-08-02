@@ -1,20 +1,23 @@
 package repository;
 
-import entity.user;
+import entity.User;
 import utils.ApplicationContext;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AccountRepository {
 
-    public void showAllAccounts(Connection connection) throws SQLException {
+    public List<User> showAllAccounts(Connection connection) throws SQLException {
+        List<User> users = new ArrayList<User>();
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("select * from initAccountTable");
         while (resultSet.next()){
-            user user = new user();
+            User user = new User();
             user.setUserId(resultSet.getInt("id"));
             user.setUserName(resultSet.getString("username"));
             user.setUserPassWord(resultSet.getString("password"));
@@ -23,14 +26,14 @@ public class AccountRepository {
             user.setUserAccountType(resultSet.getString("type_of_account"));
             user.setUserLastSeen(resultSet.getString("last_seen"));
             user.setUserCreateAccountTime(resultSet.getInt("accountCreateTime"));
-            System.out.println(user);
+            users.add(user);
         }
-        System.out.println("<--->");
         statement.close();
+        return users;
     }
     public void insertUser(Connection connection) {
         ApplicationContext.getAccountRepository();
-        user user = new user();
+        User user = new User();
         System.out.println("enter your username:");
         System.out.println("username cant have space init");
         user.setUserName(ApplicationContext.getStringScanner().nextLine());

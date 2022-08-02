@@ -1,6 +1,6 @@
 package entity;
 
-public class user {
+public class User {
 
     private Integer userId;
     private String userName;
@@ -89,7 +89,7 @@ public class user {
                 '}';
     }
 
-    public user(Integer userId, String userName, String userPassWord, Integer userMobilePhoneNumber, String userGmail, String userAccountType, Integer userCreateAccountTime, String userLastSeen) {
+    public User(Integer userId, String userName, String userPassWord, Integer userMobilePhoneNumber, String userGmail, String userAccountType, Integer userCreateAccountTime, String userLastSeen) {
         this.userId = userId;
         this.userName = userName;
         this.userPassWord = userPassWord;
@@ -99,7 +99,7 @@ public class user {
         this.userCreateAccountTime = userCreateAccountTime;
         this.userLastSeen = userLastSeen;
     }
-    public user(){
+    public User(){
 
     }
 }
