@@ -1,6 +1,6 @@
 package entity;
 
-public class comment {
+public class Comment {
 
     private Integer commentId;
     private String commentText;

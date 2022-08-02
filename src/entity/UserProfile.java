@@ -1,6 +1,6 @@
 package entity;
 
-public class userprofile {
+public class UserProfile {
 
     private Integer profileID;
     private String profileName;

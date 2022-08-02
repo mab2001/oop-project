@@ -1,6 +1,6 @@
 package entity;
 
-public class message {
+public class Message {
 
     private Integer messageId;
     private String messageLocation;

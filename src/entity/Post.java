@@ -1,6 +1,6 @@
 package entity;
 
-public class post {
+public class Post {
 
     private Integer postID;
     private Integer postNumber;

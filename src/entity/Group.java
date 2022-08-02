@@ -1,6 +1,6 @@
 package entity;
 
-public class group {
+public class Group {
 
     private Integer groupId;
     private String groupName;

@@ -1,6 +1,6 @@
 package entity;
 
-public class privatechat {
+public class PrivateChat {
 
     private Integer privatechatId;
     private String privatechatName;
