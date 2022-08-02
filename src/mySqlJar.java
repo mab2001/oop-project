@@ -3,12 +3,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class mySqlJar {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static Connection Connect() {
 
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root",
-                "mab2000mahdimab@");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root",
+                    "mab2000mahdimab@");
+            return connection;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
 
     }
 }
