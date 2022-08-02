@@ -13,7 +13,7 @@ import java.util.List;
 public class AccountRepository {
 
     public static List<User> showAllAccounts(Connection connection) throws SQLException {
-        List<User> users = new ArrayList<User>();
+        List<User> users = new ArrayList<>();
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("select * from initAccountTable");
         while (resultSet.next()){
